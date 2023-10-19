@@ -68,6 +68,6 @@ while True:
             cvzone.cornerRect(img, (x1, y1, w, h), l=9, rt=2, colorR=(255, 0, 255))
             cvzone.putTextRect(img, f'{int(id)}', (max(0, x1), max(40, y1)),scale=2, thickness=3, offset=10)  # chinh scale, thickness cua phan chu mieu ta o day, chinh thu muon xem o text:
 
-        cvzone.putTextRect(img, f'{len(resultsTracker)}', (max(0, x1), max(40, y1)), scale=0.7, thickness=1) #chinh scale, thickness cua phan chu mieu ta o day
+        cvzone.putTextRect(img, f'Count: {len(resultsTracker)}', (max(0, x1), max(40, y1)), scale=0.7, thickness=1) #chinh scale, thickness cua phan chu mieu ta o day
     cv2.imshow("Image", img)
     cv2.waitKey(1)
