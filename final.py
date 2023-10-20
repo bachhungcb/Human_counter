@@ -5,7 +5,7 @@ import math
 import numpy as np
 from sort import *
 
-cap = cv2.VideoCapture(0) #For webcam, webcam mac dinh la 0
+cap = cv2.VideoCapture(1) #For webcam, webcam mac dinh la 0
 cap.set(3, 1280)
 cap.set(4, 720)
 # cap = cv2.VideoCapture("../Videos/people.mp4") #test video o day
