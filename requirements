@@ -1,7 +1,7 @@
 Bước 1: cài đặt ultralytics lên máy tính.
-
 pip install ultralytics
 
+Bước 2: Kiểm tra phiên bản Pyhton Interpreter
 # Human Counter
 cvzone==1.5.6
 ultralytics==8.0.26
