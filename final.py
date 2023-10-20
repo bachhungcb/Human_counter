@@ -6,7 +6,7 @@ import numpy as np
 from sort import *
 
 cap = cv2.VideoCapture(0) #For webcam, webcam mac dinh la 0
-cap.set(3,1280)
+cap.set(3, 1280)
 cap.set(4, 720)
 # cap = cv2.VideoCapture("../Videos/people.mp4") #test video o day
 
@@ -38,8 +38,6 @@ while True:
             x1, y1, x2, y2 = box.xyxy[0] #xac dinh 4 canh cua hinh vuong bao quanh vat the
             x1, y1, x2, y2 = int(x1), int(y1), int(x2), int(y2)
             w, h = x2 - x1, y2 - y1
-            #cv2.rectangle(img, (x1, y1), (x2, y2), (255, 0, 255), 3)#chinh mau va do rong cua duong vien, day la box xau hon
-
 
             # Confidence
             conf = math.ceil((box.conf[0]*100))/100
@@ -48,13 +46,8 @@ while True:
             currentClass = classNames[cls]
 
             if (  # o vuong ngoai dung de theo doi doi tuong
-                    currentClass == "person") and conf > 0.6:
+                 currentClass == "person") and conf > 0.6:
                 cvzone.cornerRect(img, (x1, y1, w, h))  # chinh mau chinh o day(Ctrl + click conerReact)
-                # chinh doi tuong xet duoc o day
-                # cvzone.putTextRect(img, f'{currentClass} {conf}', (max(0, x1), max(40, y1)),
-                #                    scale=0.6, thickness=1,
-                #                    offset=3)  # chinh scale, thickness cua phan chu mieu ta o day
-                # cvzone.cornerRect(img, (x1, y1, w, h), l=9,rt=5)
                 currentArray = np.array([x1, y1, x2, y2, conf])  # tao mang de theo doi
                 detections = np.vstack((detections, currentArray))
 
@@ -66,8 +59,8 @@ while True:
             print(result)
             w, h = x2 - x1, y2 - y1
             cvzone.cornerRect(img, (x1, y1, w, h), l=9, rt=2, colorR=(255, 0, 255))
-            cvzone.putTextRect(img, f'{int(id)}', (max(0, x1), max(40, y1)),scale=2, thickness=3, offset=10)  # chinh scale, thickness cua phan chu mieu ta o day, chinh thu muon xem o text:
+            #cvzone.putTextRect(img, f'{int(id)}', (max(0, x1), max(40, y1)),scale=2, thickness=3, offset=10)  # chinh scale, thickness cua phan chu mieu ta o day, chinh thu muon xem o text:
 
-        cvzone.putTextRect(img, f'Count: {len(resultsTracker)}', (max(0, x1), max(40, y1)), scale=0.7, thickness=1) #chinh scale, thickness cua phan chu mieu ta o day
+        cv2.putText(img, f"So nguoi: {str(len(resultsTracker))}", (0, 100), cv2.FONT_HERSHEY_PLAIN,5,(139,195,75),7) #chinh scale, thickness cua phan chu mieu ta o day
     cv2.imshow("Image", img)
     cv2.waitKey(1)
