@@ -1,0 +1,4 @@
+Bước 1: cài đặt ultralytics lên máy tính.
+pip install ultralytics
+
+Bước 2: Đồng bộ hóa file yêu cầu (requirements.txt) với 
