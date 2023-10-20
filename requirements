@@ -1,0 +1,3 @@
+Bước 1: cài đặt ultralytics lên máy tính.
+
+pip install ultralytics
