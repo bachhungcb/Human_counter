@@ -1,4 +1,8 @@
 Bước 1: cài đặt ultralytics lên máy tính.
 pip install ultralytics
 
-Bước 2: Đồng bộ hóa file yêu cầu (requirements.txt) với 
+Bước 2: Đồng bộ hóa file yêu cầu (requirements.txt) với interpreter của Python
+Alt+\ -> Tools -> Sync Python requirements -> package requirements file -> <đường dẫn
+đến thư mục chứa chương trình>../requirements.txt -> Ok -> Ok
+
+Bước 3: Cài đặt yêu cầu của dự án theo hướng dẫn của file requirements.txt
